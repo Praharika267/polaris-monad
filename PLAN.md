@@ -300,3 +300,17 @@ domain, a real-phone run, the video, registration and the final push.
 - **Scope:** SDK lifecycle regression tests use test windows; no claim of new
   live browser, on-chain, external integration or deployment verification.
   Existing dependency holds above remain in place.
+
+
+### Codex takeover · 8 Oct: PWA install guide
+
+- **DONE:** App-wide capture keeps Chrome/Edge's install prompt available after
+  navigating to Profile. The profile now provides a collapsible installation
+  guide for Safari on iPhone/iPad and Chrome/Edge, even without a browser prompt.
+  A dismissed or failed prompt exposes manual instructions; failed prompts show
+  an error; confirmed installation removes the panel. Standalone apps hide it.
+- **Verified:** consumer app tests 90/90, typecheck and focused ESLint pass.
+  Added two event lifecycle regression tests for early capture, one-use
+  consumption, installation and listener cleanup.
+- **UNTESTED:** actual OS installation/launcher and real-device passkey sign-in
+  need a device/browser installation session. No new real-device claim.
