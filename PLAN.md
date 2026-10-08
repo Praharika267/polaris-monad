@@ -286,3 +286,17 @@ A 44-item checklist, each item 1 (done), 0.5 (built, one step left) or 0.
 Envio, `cre login`), Privy origins or a test account, the testnet go
 (PolarisSplit, real AUSD, the new vault), the shop's hosting and the Face ID
 domain, a real-phone run, the video, registration and the final push.
+
+
+### Codex takeover · 8 Oct: checkout interruption safety
+
+- **DONE:** The SDK honors cancellation while an asynchronous checkout
+  session is being created for mobile redirects and blocked-popup fallback.
+  An already-aborted signal does not invoke a session factory or open a window.
+  Late session failures after cancellation or a popup-blocked error are consumed,
+  so they cannot produce unhandled promise rejections in the merchant page.
+- **Verified:** `pnpm --filter polarispay-sdk test` — 161 tests pass (13 files),
+  including four new cancellation/failure regressions; SDK typecheck and build.
+- **Scope:** SDK lifecycle regression tests use test windows; no claim of new
+  live browser, on-chain, external integration or deployment verification.
+  Existing dependency holds above remain in place.
