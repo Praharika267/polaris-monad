@@ -315,3 +315,22 @@ domain, a real-phone run, the video, registration and the final push.
   consumption, installation and listener cleanup.
 - **UNTESTED:** actual OS installation/launcher and real-device passkey sign-in
   need a device/browser installation session. No new real-device claim.
+
+
+### Codex development continuation · 8 Oct: merchant setup wizard
+
+- **BUILT:** Overview now guides a new merchant through payout registration,
+  creating a usable checkout link, and receiving the first confirmed payment.
+  Each step can be revisited. Real existing registration/retry, business settings,
+  link creation, checkout preview/copy and payment refresh actions are wired in.
+  Completion is derived from the persisted merchant registry/link/payment API
+  data. Unknown data remains “Checking”; failed payments never complete setup;
+  expired/inactive/used links are not offered as checkouts.
+- **Verified:** four setup-state regression tests pass; focused ESLint passes.
+  Typecheck and single-worker production business build pass. Real Chrome
+  at 390×844 checks the public dashboard→login gate with zero page exceptions
+  and zero horizontal overflow; the authenticated wizard remains UNTESTED.
+- **Runtime:** the new authenticated merchant wizard still requires a real Privy
+  session or the complete permitted local fork stack. No authentication fixture
+  or invented successful payment was introduced. Browser/public-gate check uses
+  background workers disabled to respect the chain hold.
