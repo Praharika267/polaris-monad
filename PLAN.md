@@ -310,6 +310,7 @@ domain, a real-phone run, the video, registration and the final push.
   A dismissed or failed prompt exposes manual instructions; failed prompts show
   an error; confirmed installation removes the panel. Standalone apps hide it.
 - **Verified:** consumer app tests 90/90, typecheck and focused ESLint pass.
+  Production consumer build passes (Next compilation, TypeScript and 41 static pages).
   Added two event lifecycle regression tests for early capture, one-use
   consumption, installation and listener cleanup.
 - **UNTESTED:** actual OS installation/launcher and real-device passkey sign-in
